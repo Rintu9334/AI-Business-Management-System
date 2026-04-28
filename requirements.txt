@@ -11,10 +11,10 @@ tzdata==2026.1
 gunicorn==21.2.0
 whitenoise==6.8.2
 
-# ML / AI module
-pandas==2.2.3
-numpy==1.26.4
-scikit-learn==1.4.2
+# ML / AI module (optional - app works without these)
+pandas
+numpy
+scikit-learn
 
-# PostgreSQL (optional — needed if DATABASE_URL is set)
+# PostgreSQL (optional)
 psycopg2-binary==2.9.9
