@@ -13,8 +13,8 @@ whitenoise==6.8.2
 
 # ML / AI module
 pandas==2.2.3
-numpy==2.0.2
-scikit-learn==1.5.2
+numpy==1.26.4
+scikit-learn==1.4.2
 
 # PostgreSQL (optional — needed if DATABASE_URL is set)
 psycopg2-binary==2.9.9
