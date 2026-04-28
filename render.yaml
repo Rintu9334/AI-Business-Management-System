@@ -4,10 +4,10 @@
 services:
   # ── Django Backend ───────────────────────────────────────────────────────────
   - type: web
-    name: ai-bms-backend
+    name: ai-business-management-system
     runtime: python
     plan: free
-    buildCommand: pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput
+    buildCommand: pip install -r requirements.txt && python manage.py migrate --noinput && python manage.py collectstatic --noinput && python create_admin.py
     startCommand: gunicorn backend.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 120
     healthCheckPath: /
 
@@ -20,10 +20,8 @@ services:
         generateValue: true
       - key: ALLOWED_HOSTS
         value: ".onrender.com"
-      # After frontend deploys, set this to your frontend Render URL:
-      # e.g. https://ai-bms-frontend.onrender.com
       - key: CORS_ALLOWED_ORIGINS
-        value: ""
+        value: "https://ai-bms-frontend.onrender.com"
 
   # ── React Frontend ───────────────────────────────────────────────────────────
   - type: static
@@ -33,10 +31,8 @@ services:
     pullRequestPreviewsEnabled: false
 
     envVars:
-      # Set this to your backend Render URL BEFORE the first deploy:
-      # e.g. https://ai-bms-backend.onrender.com/api/
       - key: VITE_API_URL
-        value: ""
+        value: "https://ai-business-management-system.onrender.com/api/"
 
     routes:
       - type: rewrite
