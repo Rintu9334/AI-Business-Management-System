@@ -1,0 +1,20 @@
+Django==6.0.4
+djangorestframework==3.17.1
+djangorestframework-simplejwt==5.5.1
+django-cors-headers==4.9.0
+PyJWT==2.12.1
+asgiref==3.11.1
+sqlparse==0.5.5
+tzdata==2026.1
+
+# Production server & static files
+gunicorn==21.2.0
+whitenoise==6.8.2
+
+# ML / AI module
+pandas==2.2.3
+numpy==1.26.4
+scikit-learn==1.5.2
+
+# PostgreSQL (optional — needed if DATABASE_URL is set)
+psycopg2-binary==2.9.9
